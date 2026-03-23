@@ -1,48 +1,46 @@
 # Hardware Prototyping Checklist
 
-A no-BS, phase-by-phase checklist for teams building hardware prototypes — from first idea to production handoff.
+A structured, phase-by-phase checklist for building hardware prototypes — from initial concept through production handoff.
 
 ## Why This Exists
 
-I'm Julien, an electronics engineer based in Montreal. I run [Atallis Solutions](https://atallis.com), a hardware prototyping studio. Over the past few years I've helped startups, creative agencies, and R&D teams take hardware ideas from napkin sketch to working product — IoT sensors for industrial equipment, custom LED displays, BLE controllers, stereo camera systems, interactive installations, and more.
+I'm Julien, the engineer behind [Atallis Solutions](https://atallis.com) — a hardware prototyping studio based in Montreal. I work directly with startups, creative agencies, and R&D teams to turn hardware ideas into working products. IoT platforms for industrial monitoring, custom LED display systems, BLE controllers, stereo camera modules, interactive installations — the kind of projects where getting the architecture right on day one determines everything that follows.
 
-Every one of these projects taught me something. Usually the hard way. And I loved every minute of it — even the painful debugging sessions at 11pm with an oscilloscope and a puzzled face.
+Being a one-person studio is a deliberate choice. When you work with Atallis, you talk to the person who designs your schematic, writes your firmware, and debugs your board at 11pm with an oscilloscope. There's no project manager translating between you and the engineer. That direct line is what lets us move fast and make good decisions early.
 
-The pattern I kept seeing: **teams don't fail because of bad engineering — they fail because they skip steps.** They jump straight to PCB layout because it feels productive, skip the architecture phase because "we already know what we're building," or order boards before validating the risky parts on a breadboard. Then they spend 3x the time fixing what should have been caught early.
+The pattern I kept seeing across projects: **teams don't fail because of bad engineering — they fail because they skip steps.** They jump straight to PCB layout because it feels productive, skip the architecture phase because "we already know what we're building," or order boards before validating the risky parts on a breadboard. Then they spend 3x the time and budget fixing what should have been caught early.
 
-This checklist is what I wish someone had handed me on my first project. It's the same process I now follow with every client, whether it's a startup building their first IoT device or a design studio adding electronics to a physical product for the first time.
+This checklist is the process I follow on every engagement. I share it with clients at the start of a project so the entire development is transparent — you always know what phase we're in, what's been validated, and what's coming next. Hardware development shouldn't be a black box.
 
-**It's opinionated.** It reflects how I work and what I've seen go wrong. Your mileage may vary, but if you're building hardware and don't have a process yet — this is a solid starting point.
-
-I also share this with every client at the start of a project. Hardware development can feel like a black box when you're a founder or a creative director working with an engineer for the first time. This checklist makes the process transparent — you always know what phase we're in, what's been validated, and what's coming next. No surprises, no "trust me, it's almost done."
+**It's opinionated.** It reflects how I approach hardware and what I've seen go wrong across dozens of projects. Not every item applies to every build — but skipping a phase entirely is almost always a costly mistake.
 
 ---
 
 ## Who This Is For
 
-- **Hardware startups** building their first prototype (this is most of my clients — and the ones who benefit most from a structured process)
-- **Creative agencies & design studios** adding electronics to physical products (you have the design chops, you just need the electronics roadmap)
-- **Founders working with a hardware engineer** who want to understand what's happening and why (this checklist is your window into the process)
-- **R&D teams** exploring new product lines
-- **Makers** ready to graduate from breadboard to a real product
+- **Hardware startups** building their first prototype — and wanting a clear engineering process from day one
+- **Creative agencies & design studios** adding electronics to physical products — you bring the vision, this gives you the technical roadmap
+- **Founders and product leads** working with a hardware engineer who want to understand what's happening and why at each stage
+- **R&D and innovation teams** exploring new product lines with tight timelines
+- **Experienced makers** ready to move from breadboard to a production-quality design
 
 ---
 
 ## How to Use This Checklist
 
-**If you're building it yourself:** Work through each phase in order. Check items off as you go. Not every item applies to every project — use judgment. But skipping a *phase* entirely is almost always a mistake.
+**If you're building it yourself:** Work through each phase in order. Not every checklist item applies to every project — use engineering judgment. But skipping a phase entirely is almost always a mistake that shows up later as rework.
 
-**If you're working with an engineer (or with us):** Use this as a shared reference. Ask "what phase are we in?" at any point. If your engineer can't answer clearly, that's a red flag. A good hardware process has clear gates between phases — you validate before you commit.
+**If you're working with an engineer (or with us):** Use this as a shared reference throughout the project. You should be able to ask "what phase are we in?" at any point and get a clear answer. If your engineer can't tell you, that's a red flag. Good hardware development has defined gates between phases — you validate before you commit resources to the next stage.
 
-The phases are sequential. I know Phase 4 (PCB layout) is the fun part. Resist the urge to jump there before the architecture is solid — it will save you a respin and a few hundred dollars in wasted PCBs.
+The phases are sequential by design. Phase 4 (PCB layout) is where the excitement is, but jumping there before the architecture is solid is one of the most common — and most expensive — mistakes in hardware development.
 
-> **Tip:** Fork this repo and check items off as you go, or copy it into whatever project management tool you use.
+> **Tip:** Fork this repo and track your progress via commits, or copy it into your project management tool.
 
 ---
 
 ## Phase 0 — Define the Problem
 
-Before touching any hardware, make sure you're solving the right problem. I've had clients come in saying "I need a custom PCB" when what they actually needed was a $12 dev board and three lines of code. This phase prevents you from building the wrong thing really well.
+Before touching any hardware, make sure you're solving the right problem. I've had clients come in asking for a custom PCB when what they actually needed was a $12 dev board and a few lines of firmware. This phase prevents you from building the wrong thing really well — which is an expensive way to learn.
 
 - [ ] **Problem statement written down** — one sentence describing what this device does and why it matters
 - [ ] **Target user identified** — who will use this and in what context?
@@ -91,7 +89,7 @@ On one of my IoT projects — an industrial vibration monitoring system — we s
 
 ## Phase 2 — Proof of Concept (Breadboard / DevKit)
 
-Validate the risky parts before committing to a PCB. This is the cheapest phase to fail in — a breadboard costs nothing, a bad PCB costs time and money. I tell every client: if we're going to discover a showstopper, let's discover it now, with jumper wires, not after we've ordered 50 boards.
+Validate the risky assumptions before committing to a PCB. This is the cheapest phase to discover problems — a breadboard and jumper wires cost nothing, a bad PCB revision costs weeks and hundreds of dollars. The goal here is simple: de-risk the architecture by proving the critical paths work before we invest in a board spin.
 
 - [ ] **Dev kit or eval board acquired** for the main MCU
 - [ ] **Critical subsystems validated individually**
@@ -180,7 +178,7 @@ Bringing the hardware to life.
 
 ## Phase 6 — Assembly & Bring-Up
 
-The moment of truth. This is where you find out if your design actually works in the real world. I still get a rush every time I power up a new board for the first time — and I still follow the exact same bring-up sequence every time. No shortcuts here.
+The moment of truth — and honestly, my favorite part of the entire process. There's nothing quite like powering up a board you designed and watching it come to life. But excitement doesn't replace discipline. I follow the exact same bring-up sequence on every project, whether it's a simple sensor board or a complex multi-rail system. Methodical bring-up catches problems before they cause damage.
 
 - [ ] **PCBs ordered** — with correct specifications (layers, thickness, finish, color)
 - [ ] **Stencil ordered** — if doing reflow soldering
@@ -285,13 +283,13 @@ Found something missing? Disagree with a recommendation? Open an issue or submit
 
 ## About
 
-I'm Julien, founder of [Atallis Solutions](https://atallis.com) in Montreal. I help teams who have ambitious hardware ideas but need an experienced engineer to actually build them — the kind of projects where the architecture decisions on day one determine whether you ship on time or burn through three respins.
+I'm Julien, the engineer behind [Atallis Solutions](https://atallis.com) in Montreal. I run a one-person hardware prototyping studio — deliberately small, deliberately senior. My clients get direct access to the person who architects their system, designs their PCB, writes their firmware, and brings up their boards.
 
-Honestly, I just love building things. There's something about seeing a board power up for the first time, watching an LED blink, getting sensor data streaming across a terminal — that never gets old. I started this company because I wanted to spend my days doing exactly this, and helping others do it well.
+I chose this path because I genuinely love the craft of prototyping — the problem-solving, the first power-up, the satisfaction of a clean architecture that just works. Building Atallis was a way to keep doing that every day, across a wide range of industries and challenges, while giving clients the kind of focused attention that larger firms can't.
 
-My clients range from IoT startups building their first connected device to creative agencies who just landed a project that needs custom electronics and have no idea where to start. In both cases, the process is the same — and this checklist is how I keep it structured.
+Whether you're a startup building your first connected device or a creative agency that just won a project involving custom electronics — if you need a senior hardware engineer who thinks at the system level and ships on time, that's what I do.
 
-If you're working on a hardware project and want to talk through your architecture, feel free to reach out.
+If you're working on a hardware project and want to talk through your architecture, I'm always happy to have that conversation.
 
 **Website:** [atallis.com](https://atallis.com)
 **LinkedIn:** [Atallis Solutions](https://linkedin.com/company/atallis)
