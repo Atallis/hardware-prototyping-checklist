@@ -6,7 +6,7 @@ A structured, phase-by-phase checklist for building hardware prototypes — from
 
 I'm Julien, the engineer behind [Atallis Solutions](https://atallis.com) — a hardware prototyping studio based in Montreal. I work directly with startups, creative agencies, and R&D teams to turn hardware ideas into working products. IoT platforms for industrial monitoring, custom LED display systems, BLE controllers, stereo camera modules, interactive installations — the kind of projects where getting the architecture right on day one determines everything that follows.
 
-Being a one-person studio is a deliberate choice. When you work with Atallis, you talk to the person who designs your schematic, writes your firmware, and debugs your board at 11pm with an oscilloscope. There's no project manager translating between you and the engineer. That direct line is what lets us move fast and make good decisions early.
+Being a one-person studio is a deliberate choice. When you work with Atallis, you're working directly with a senior engineer who thinks at the system level — someone who challenges your assumptions early, helps you make the right architecture calls, and stays involved from concept through production. No handoffs, no communication layers. That's what lets us move fast and avoid expensive mistakes.
 
 The pattern I kept seeing across projects: **teams don't fail because of bad engineering — they fail because they skip steps.** They jump straight to PCB layout because it feels productive, skip the architecture phase because "we already know what we're building," or order boards before validating the risky parts on a breadboard. Then they spend 3x the time and budget fixing what should have been caught early.
 
